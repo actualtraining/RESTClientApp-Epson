@@ -27,5 +27,46 @@ namespace RESTClientApp.Services
             return res.Data;  
         }
 
+        public async Task InsertKategori(Kategori kategori)
+        {
+            var request = new RestRequest("api/Kategori", Method.POST);
+            request.AddBody(kategori);
+            try
+            {
+                await _client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task UpdateKategori(Kategori kategori)
+        {
+            var request = new RestRequest("api/Kategori", Method.PUT);
+            request.AddBody(kategori);
+            try
+            {
+                await _client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task DeleteKategori(int kategoriID)
+        {
+            var request = new RestRequest(string.Format("api/Kategori/{0}", kategoriID),Method.DELETE);
+            try
+            {
+                await _client.Execute(request);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

@@ -13,7 +13,7 @@ namespace RESTClientApp
         {
             InitializeComponent();
 
-            MainPage = new RESTClientApp.MainPage();
+            MainPage = new NavigationPage(new RESTClientApp.KategoriPage());
         }
 
         protected override void OnStart()

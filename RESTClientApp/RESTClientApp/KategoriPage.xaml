@@ -6,7 +6,7 @@
         <ListView x:Name="listView">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding KategoriName}" Detail="{Binding KategoriID}" 
+                    <TextCell Text="{Binding NamaKategori}" Detail="{Binding KategoriID}" 
                               TextColor="Red" DetailColor="Green" />
                 </DataTemplate>
             </ListView.ItemTemplate>
