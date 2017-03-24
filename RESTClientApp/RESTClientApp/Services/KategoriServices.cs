@@ -21,7 +21,10 @@ namespace RESTClientApp.Services
         public async Task<IEnumerable<Kategori>> GetAllKategori()
         {
             RestRequest request = new RestRequest("api/Kategori", Method.GET);
-             
+            var res = await _client.Execute<List<Kategori>>(request);
+            if (res.Data == null)
+                throw new Exception("Error : " + res.StatusCode.ToString() + " " + res.StatusDescription);
+            return res.Data;  
         }
 
     }
