@@ -19,6 +19,16 @@ namespace RESTClientApp
         {
             InitializeComponent();
             myServices = new KategoriServices();
+
+            listView.ItemTapped += ListView_ItemTapped;
+        }
+
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var currKategori = e.Item as Kategori;
+            DetailKategori detailKat = new DetailKategori();
+            detailKat.BindingContext = currKategori;
+            await Navigation.PushAsync(detailKat);
         }
 
         protected async override void OnAppearing()

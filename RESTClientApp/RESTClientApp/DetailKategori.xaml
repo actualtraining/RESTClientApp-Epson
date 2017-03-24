@@ -16,7 +16,7 @@
             </Grid.RowDefinitions>
 
             <Label Text="Kategori ID :" FontSize="Medium" />
-            <Entry x:Name="txtKategoriID" Text="{Binding KategoriID}" Grid.Row="0" Grid.Column="1" />
+            <Entry x:Name="txtKategoriID" IsEnabled="False" Text="{Binding KategoriID}" Grid.Row="0" Grid.Column="1" />
 
             <Label Text="Nama Kategori :" FontSize="Medium" Grid.Row="1" Grid.Column="0" />
             <Entry x:Name="txtNamaKategori" Text="{Binding NamaKategori}" Grid.Row="1" Grid.Column="1" />
