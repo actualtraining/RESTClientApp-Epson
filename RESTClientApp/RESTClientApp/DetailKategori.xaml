@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RESTClientApp.DetailKategori" Title="Detail Kategori">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Kategori ID :" FontSize="Medium" />
+            <Entry x:Name="txtKategoriID" Text="{Binding KategoriID}" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Nama Kategori :" FontSize="Medium" Grid.Row="1" Grid.Column="0" />
+            <Entry x:Name="txtNamaKategori" Text="{Binding NamaKategori}" Grid.Row="1" Grid.Column="1" />
+
+            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                <Button x:Name="btnEdit" Text="Edit" />
+                <Button x:Name="btnDelete" Text="Delete" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

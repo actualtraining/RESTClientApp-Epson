@@ -38,6 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetailKategori.xaml.cs">
+      <DependentUpon>DetailKategori.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers.cs" />
     <Compile Include="KategoriPage.xaml.cs">
       <DependentUpon>KategoriPage.xaml</DependentUpon>
@@ -103,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="KategoriPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DetailKategori.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
