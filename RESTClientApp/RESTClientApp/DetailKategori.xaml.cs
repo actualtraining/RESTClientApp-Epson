@@ -18,7 +18,28 @@ namespace RESTClientApp
         public DetailKategori()
         {
             InitializeComponent();
+            myServices = new KategoriServices();
             btnEdit.Clicked += BtnEdit_Clicked;
+
+            btnDelete.Clicked += BtnDelete_Clicked;
+        }
+
+        private async void BtnDelete_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = await DisplayAlert("Konfirmasi", "Apakah anda ingin delete data " + txtNamaKategori.Text,
+                    "Yes","No");
+                if (result)
+                {
+                    await myServices.DeleteKategori(Convert.ToInt32(txtKategoriID.Text));
+                    await Navigation.PopAsync();
+                }   
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex, "OK");
+            }
         }
 
         private KategoriServices myServices;
