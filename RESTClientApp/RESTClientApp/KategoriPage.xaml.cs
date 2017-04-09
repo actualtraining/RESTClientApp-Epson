@@ -8,17 +8,18 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using RESTClientApp.Model;
 using RESTClientApp.Services;
+using RESTClientApp.ViewModel;
 
 namespace RESTClientApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class KategoriPage : ContentPage
     {
-        private KategoriServices myServices;
+       
         public KategoriPage()
         {
             InitializeComponent();
-            myServices = new KategoriServices();
+            BindingContext = new KategoriViewModel();
 
             listView.ItemTapped += ListView_ItemTapped;
         }
@@ -31,10 +32,10 @@ namespace RESTClientApp
             await Navigation.PushAsync(detailKat);
         }
 
-        protected async override void OnAppearing()
+        /*protected async override void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await myServices.GetAllKategori();
-        }
+            //listView.ItemsSource = await myServices.GetAllKategori();
+        }*/
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using RestSharp.Portable;
 using RestSharp.Portable.HttpClient;
 using RESTClientApp.Model;
+using System.Collections.ObjectModel;
 
 namespace RESTClientApp.Services
 {
@@ -18,13 +19,14 @@ namespace RESTClientApp.Services
             _client = new RestClient(Helpers.GetUrl());
         }
 
-        public async Task<IEnumerable<Kategori>> GetAllKategori()
+        public async Task<ObservableCollection<Kategori>> GetAllKategori()
         {
             RestRequest request = new RestRequest("api/Kategori", Method.GET);
-            var res = await _client.Execute<List<Kategori>>(request);
+            var res = await _client.Execute<ObservableCollection<Kategori>>(request);
             if (res.Data == null)
                 throw new Exception("Error : " + res.StatusCode.ToString() + " " + res.StatusDescription);
-            return res.Data;  
+
+            return res.Data;
         }
 
         public async Task InsertKategori(Kategori kategori)

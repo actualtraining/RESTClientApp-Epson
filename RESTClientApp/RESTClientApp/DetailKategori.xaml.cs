@@ -38,7 +38,7 @@ namespace RESTClientApp
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", ex, "OK");
+                await DisplayAlert("Error", ex.Message, "OK");
             }
         }
 

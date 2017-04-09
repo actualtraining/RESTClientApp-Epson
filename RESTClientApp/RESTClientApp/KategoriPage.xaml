@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RESTClientApp.KategoriPage" Title="List Kategori">
     <ContentPage.Content>
-        <ListView x:Name="listView">
+        <ListView ItemsSource="{Binding ListKategori}" x:Name="listView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding NamaKategori}" Detail="{Binding KategoriID}" 

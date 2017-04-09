@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace RESTClientApp.Model
 {
-    public class Kategori
+    public class Kategori : BindableObject
     {
-        public int KategoriID { get; set; }
-        public string NamaKategori { get; set; }
+        private int kategoriId;
+        public int KategoriID
+        {
+            get { return kategoriId; }
+            set { kategoriId = value; OnPropertyChanged("KategoriID"); }
+        }
+        //public string NamaKategori { get; set; }
+        private string namaKategori;
+        public string NamaKategori
+        {
+            get { return namaKategori; }
+            set { namaKategori = value; OnPropertyChanged("NamaKategori"); }
+        }
+
     }
 }
